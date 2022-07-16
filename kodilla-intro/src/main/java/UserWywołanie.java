@@ -1,6 +1,6 @@
 public class UserWywołanie {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         User Jan = new User("Jan", 25);
         User Anna = new User("Anna", 19);
@@ -16,12 +16,19 @@ public class UserWywołanie {
         double sum = 0.0;
         int usersAmount = usersAge.length;
 
-        for(int i=0; i < usersAge.length; i++){
+        for (int i = 0; i < usersAge.length; i++) {
             sum += usersAge[i];
         }
 
         double averageAgeOfUsers = sum / usersAmount;
         System.out.println(averageAgeOfUsers);
 
+        for (int i = 0; i < usersNames.length; i++) {
+            if (usersAge[i] < averageAgeOfUsers) {
+                System.out.println(usersNames[i]);
+            }
+        }
     }
 }
+
+
