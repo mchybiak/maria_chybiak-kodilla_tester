@@ -1,10 +1,15 @@
 public class GradesWywołanie {
     public static void main(String[] args){
         Grades gradebook = new Grades();
-        gradebook.add(1);
-        gradebook.add(1);
-        gradebook.add(1);
-        gradebook.add(1);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
+        gradebook.add(2);
 
         double average = gradebook.getAverage();
         System.out.println(average);

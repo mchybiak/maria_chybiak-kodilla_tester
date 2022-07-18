@@ -18,7 +18,7 @@ public class Grades {
     public double getAverage() {
 
         double sum = 0.0;
-        int gradesAmount = grades.length;
+        int gradesAmount = this.size;
 
         for (int i = 0; i < gradesAmount; i++) {
             sum += grades[i];
@@ -29,15 +29,7 @@ public class Grades {
     }
 
     public int getLastGrade() {
-
-        int gradesAmount = grades.length;
-        int sum = 0;
-        int lastAddGrade = 0 + grades.length;
-
-        for (int i = 0; i >= gradesAmount; i++) {
-            return lastAddGrade;
-        }
-        return lastAddGrade;
+        return this.grades[this.size];
     }
 }
 
