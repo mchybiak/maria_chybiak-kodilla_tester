@@ -1,3 +1,6 @@
+
+
+// zadanie po zmianach
 public class User {
     String names;
     int age;
