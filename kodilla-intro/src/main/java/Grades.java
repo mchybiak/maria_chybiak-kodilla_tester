@@ -29,8 +29,8 @@ public class Grades {
     }
 
     public int getLastGrade() {
-        return this.grades[this.size];
+        return this.grades[this.size - 1];
+        }
     }
-}
 
 
