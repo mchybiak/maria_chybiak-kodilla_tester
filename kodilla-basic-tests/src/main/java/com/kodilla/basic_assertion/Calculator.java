@@ -21,7 +21,7 @@ public class Calculator {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int a = 1;
+        int a = 8;
         int b = 2;
         int sumResult = calculator.sum(a, b);
         int subtractionResult = calculator.subtract(a,b);
