@@ -5,13 +5,17 @@ public class Square extends Shape{
         super(surfaceArea, circuit);
     }
 
-    @Override
-    public void calculateSurfaceArea() {
+    public double
 
+    public double surfaceArea(){
+        return
     }
 
     @Override
-    public void calculateCircuit() {
+    public double calculateSurfaceArea() {
+    }
 
+    @Override
+    public double calculateCircuit() {
     }
 }
