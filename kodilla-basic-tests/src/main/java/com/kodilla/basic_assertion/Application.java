@@ -4,8 +4,8 @@ public class Application {
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        int a = 4;
-        int b = 0;
+        int a = 2;
+        int b = 4;
         int sumResult = calculator.sum(a, b);
         int subtractionResult = calculator.subtract(a,b);
         int powerAResult = calculator.powerA(a);
