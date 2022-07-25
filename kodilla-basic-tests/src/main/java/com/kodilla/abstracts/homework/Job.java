@@ -13,7 +13,6 @@ public abstract class Job {
     public double getSalary() {
         return this.salary;
     }
-
     public String getResponsibilities(){
         return this.responsibilities;
         }

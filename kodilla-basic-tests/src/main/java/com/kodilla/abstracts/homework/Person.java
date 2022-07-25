@@ -6,9 +6,9 @@ public class Person {
 
     private String firstName;
     private int age;
-    private String job;
+    private Job job;
 
-    public Person(String firstName, int age, String job){
+    public Person(String firstName, int age, Job job){
         this.firstName = firstName;
         this.age = age;
         this.job = job;
@@ -20,7 +20,7 @@ public class Person {
     }
 
     public void printResponsibilities(){
-        System.out.println(this.getFirstName() + "'s " + "responsibilities at work are: " );
+        System.out.println(getFirstName() + "'s " + "responsibilities at work are: "  + job.getResponsibilities());
     }
 
 }

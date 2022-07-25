@@ -2,9 +2,7 @@ package com.kodilla.abstracts.homework;
 
 public class Teacher extends Job{
 
-    public static String jobName = "Teacher";
-
-    public Teacher(double salary, String responsibilities) {
+    public Teacher() {
         super(5000, "lessons preparing, tests checking, looking after students");
     }
 }
