@@ -1,5 +1,6 @@
 package com.kodilla.abstracts.homework;
 
+
 public class Square extends Shape{ // Tworzę klasę dziedziczącą po klasie Shape
 
     double sideA = 2; // zmienna double -> bok kwadratu
@@ -7,7 +8,7 @@ public class Square extends Shape{ // Tworzę klasę dziedziczącą po klasie Sh
     double resultOfCircuit = 4*sideA; // zmienna wynik obliczenia obwodu kwadratu
 
     public Square(double surfaceArea, double circuit) {
-        super(surfaceArea, circuit);
+        super();
     }
     @Override
     public double calculateSurfaceArea() { //otrzymujemy szablon metody, której ciało możemy dodać wedle własnego uznania
