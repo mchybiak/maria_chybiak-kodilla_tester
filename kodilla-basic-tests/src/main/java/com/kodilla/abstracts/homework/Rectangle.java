@@ -1,25 +1,28 @@
 package com.kodilla.abstracts.homework;
 
-
-public class Square extends Shape{ // Tworzę klasę dziedziczącą po klasie Shape
+public class Rectangle extends Shape{
 
     private double sideA;
+    private double sideB;
 
-    public Square(double sideA){
+    public Rectangle(double sideA, double sideB){
         super();
         this.sideA = sideA;
+        this.sideB = sideB;
     }
+
+
     @Override
     public double calculateSurfaceArea() {
         double surfaceArea;
-        surfaceArea = this.sideA * this.sideA;
+        surfaceArea = this.sideA * this.sideB;
         return surfaceArea;
     }
 
     @Override
     public double calculateCircuit() {
         double circuit;
-        circuit = 4 * this.sideA;
+        circuit = 2 * this.sideA + 2 * this.sideB;
         return circuit;
     }
 }

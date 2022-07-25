@@ -1,25 +1,27 @@
 package com.kodilla.abstracts.homework;
 
+public class Circle extends Shape {
 
-public class Square extends Shape{ // Tworzę klasę dziedziczącą po klasie Shape
+    private static double PI = 3.1415927;
+    private double radius;
 
-    private double sideA;
-
-    public Square(double sideA){
+    public Circle(double radius) {
         super();
-        this.sideA = sideA;
+        this.radius = radius;
     }
+
+
     @Override
     public double calculateSurfaceArea() {
         double surfaceArea;
-        surfaceArea = this.sideA * this.sideA;
+        surfaceArea = PI * this.radius * this.radius;
         return surfaceArea;
     }
 
     @Override
     public double calculateCircuit() {
         double circuit;
-        circuit = 4 * this.sideA;
+        circuit = 2 * PI * this.radius;
         return circuit;
     }
 }
