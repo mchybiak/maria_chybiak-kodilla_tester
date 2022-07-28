@@ -1,6 +1,7 @@
 // zadanie po zmianach
 public class UserWywołanie {
 
+
     public static void main(String[] args) {
 
         User Jan = new User("Jan", 25);
