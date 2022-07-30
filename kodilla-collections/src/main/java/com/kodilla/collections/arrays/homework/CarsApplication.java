@@ -30,7 +30,7 @@ public class CarsApplication {
             CarUtils.describeCar(car);
     }
 
-    public static Car drawCar(){  // Losowanie wyświetlanych samochodów
+    public static Car drawCar() {  // Losowanie wyświetlanych samochodów
         int createdRandomCar = RANDOM.nextInt(3);
         double randomSpeedUp = getRandomSpeedUp();
         if (createdRandomCar == 0)
@@ -39,10 +39,13 @@ public class CarsApplication {
             return new Toyota(randomSpeedUp);
         if (createdRandomCar == 2)
             return new Volvo(randomSpeedUp);
+
+        return drawCar();
     }
 
+
         private static double getRandomSpeedUp(){
-        return Random.nextInt(50);
+        return RANDOM.nextInt(50);
     }
 }
 
