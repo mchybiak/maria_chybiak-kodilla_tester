@@ -6,7 +6,7 @@ public class Volvo implements Car {
 
     private double speed;
 
-    public Volvo (int speed){
+    public Volvo (double speed){
         this.speed = speed;
     }
 
