@@ -40,7 +40,7 @@ public class CarsApplication {
         if (createdRandomCar == 2) // losowanie: 2 -> Volvo
             return new Volvo(randomSpeedUp);
 
-        return drawCar();  // ?
+        return null;
     }
 
 

@@ -9,6 +9,7 @@ import com.kodilla.collections.interfaces.homework.Volvo;
 
 public class CarUtils {
 
+
     public static void describeCar (Car car) {  // PSV describeCar(Car car)
         System.out.println("-----------------------------");
         System.out.println("Car kind: " + getCarName(car));
