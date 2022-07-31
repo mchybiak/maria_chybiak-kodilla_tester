@@ -33,14 +33,14 @@ public class CarsApplication {
     public static Car drawCar() {  // Losowanie wyświetlanych samochodów
         int createdRandomCar = RANDOM.nextInt(3);
         double randomSpeedUp = getRandomSpeedUp();
-        if (createdRandomCar == 0)
+        if (createdRandomCar == 0) // losowanie: 0 -> Audi
             return new Audi(randomSpeedUp);
-        if (createdRandomCar == 1)
+        if (createdRandomCar == 1) // losowanie: 1 -> Toyota
             return new Toyota(randomSpeedUp);
-        if (createdRandomCar == 2)
+        if (createdRandomCar == 2) // losowanie: 2 -> Volvo
             return new Volvo(randomSpeedUp);
 
-        return drawCar();
+        return drawCar();  // ?
     }
 
 

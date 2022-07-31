@@ -9,11 +9,11 @@ import com.kodilla.collections.interfaces.homework.Volvo;
 
 public class CarUtils {
 
-    public static void describeCar (Car car) {
+    public static void describeCar (Car car) {  // PSV describeCar(Car car)
         System.out.println("-----------------------------");
         System.out.println("Car kind: " + getCarName(car));
         System.out.println("Current speed: " + car.getSpeed());
-        car.increaseSpeed();
+        car.increaseSpeed();  // wywołanie przyspieszenia
         System.out.println("Car speed after speed up " + car.getSpeed());
     }
 
