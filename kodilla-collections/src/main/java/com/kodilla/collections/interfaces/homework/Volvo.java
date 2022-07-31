@@ -22,4 +22,11 @@ public class Volvo implements Car {
     public void decreaseSpeed(){
         speed =  speed - 15;
     }
+
+    @Override
+    public String toString() {
+        return "Volvo{" +
+                "speed=" + speed +
+                '}';
+    }
 }

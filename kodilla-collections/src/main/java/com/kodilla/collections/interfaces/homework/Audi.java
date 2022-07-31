@@ -24,7 +24,20 @@ public class Audi implements Car {
         speed =  speed + 20;
     }
 
+    @Override
+    public String toString() {
+        return "Audi{" +
+                "speed=" + speed +
+                '}';
+    }
+
     public void decreaseSpeed(){  // metoda decreaseSpeed implementowana z interfejsu Car
         speed =  speed - 21;
+
+
+
     }
+
+
+
 }
