@@ -13,13 +13,12 @@ public class BookManager {
         return new Book(title, author);
     }
 
-public static void checkingIfExist(Book book){
+    public static void checkingIfExist(Book book){
         if (books.contains(book)){
             System.out.println("You can't add this book. This book already exists.");
         } else {
             books.add(book);
             System.out.println("You can add this book. This book is new.");
         }
-}
-
+    }
 }
