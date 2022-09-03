@@ -11,7 +11,6 @@ public class Grades {
         this.grades = grades;
     }
 
-
     public double getAverage() {
         double sum = 0.0;
         for (double grade : grades)

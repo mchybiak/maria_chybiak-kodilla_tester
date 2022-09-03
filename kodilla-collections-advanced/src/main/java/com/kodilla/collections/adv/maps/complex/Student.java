@@ -39,8 +39,6 @@ public class Student {
 
     public String getLastname() {
         return lastname;
-
-
     }
 }
 

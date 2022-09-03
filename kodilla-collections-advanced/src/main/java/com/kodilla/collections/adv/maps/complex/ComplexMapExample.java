@@ -20,5 +20,10 @@ public class ComplexMapExample {
         school.put(bart, bartGrades);
 
         System.out.println(school.get(john));
+
+        for (Map.Entry<Student, Grades> studentEntry : school.entrySet()) {
+            System.out.println(studentEntry.getKey().getFirstname() + ", average: "
+                    + studentEntry.getValue().getAverage());
+        }
     }
 }
