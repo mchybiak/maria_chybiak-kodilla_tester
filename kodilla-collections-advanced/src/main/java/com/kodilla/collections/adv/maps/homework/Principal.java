@@ -7,4 +7,11 @@ public class Principal {
     public Principal(String principal) {
         this.principal = principal;
     }
+
+    @Override
+    public String toString() {
+        return "Principal{" +
+                "principal='" + principal + '\'' +
+                '}';
+    }
 }
