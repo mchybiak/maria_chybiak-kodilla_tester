@@ -14,4 +14,13 @@ public class UserRepository {
         users.add(new User("Mike Ehrmantraut", 57, 0, "Security"));
         return users;
     }
+
+    public static void main(String[] args) {
+        Double averageAge = UserRepository.getUsersList()
+                .stream()
+                .mapToInt(n -> n.getAge())
+                .average()
+                .getAsDouble();
+        System.out.println(averageAge);
+    }
 }
