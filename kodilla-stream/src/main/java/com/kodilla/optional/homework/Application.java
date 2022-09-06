@@ -8,24 +8,30 @@ package com.kodilla.optional.homework;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Application {
 
-    public static List<Student> getStudentsList(){
+    public static void main(String[] args) {
+
         Teacher joannaPolak = new Teacher("Joanna Polak");
         Teacher katarzynaBiała = new Teacher("Katarzyna Biała");
         Teacher annaCzerwona = new Teacher("Anna Czerwona");
+
         List<Student> students = new ArrayList<>();
+
         students.add(new Student("Adam Nowak", null));
         students.add(new Student("Anna Kowalska", joannaPolak));
         students.add(new Student("Kamil Czarny", katarzynaBiała));
         students.add(new Student("Karolina Nowak", null));
         students.add(new Student("Mikołaj Zielony", null));
         students.add(new Student("Wiktor Niebieski", annaCzerwona));
-        return students;
-    }
 
-    public static void main(String[] args) {
+        for (Student student : students) {
+            Optional<Teacher> optionalName = Optional.ofNullable(student.getTeacher());
+            String name = optionalName.orElse(new Teacher("<undefined>")).getName();
+            System.out.println("Uczeń: " + student.getName() + " Nauczyciel: " + name);
 
+        }
     }
 }

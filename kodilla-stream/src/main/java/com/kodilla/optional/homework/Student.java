@@ -15,7 +15,6 @@ public class Student {
                 ", teacher=" + teacher +
                 '}';
     }
-
     private Teacher teacher;
 
     public Student(String name, Teacher teacher) {
