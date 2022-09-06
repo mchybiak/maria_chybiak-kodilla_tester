@@ -14,15 +14,15 @@ public class Warehouse {
 
     private Map<String, Integer> addOrder(){
         Map<String, Integer> orders = new HashMap<>();
-        orders.put("Zamówienie 1", 1);
-        orders.put("Zamówienie 2", 2);
-        orders.put("Zamówienie 3", 3);
-        orders.put("Zamówienie 4", 4);
-        orders.put("Zamówienie 5", 5);
-        orders.put("Zamówienie 6", 6);
-        orders.put("Zamówienie 7", 7);
-        orders.put("Zamówienie 8", 8);
-        orders.put("Zamówienie 9", 9);
+        orders.put("Order 1", 1);
+        orders.put("Order 2", 2);
+        orders.put("Order 3", 3);
+        orders.put("Order 4", 4);
+        orders.put("Order 5", 5);
+        orders.put("Order 6", 6);
+        orders.put("Order 7", 7);
+        orders.put("Order 8", 8);
+        orders.put("Order 9", 9);
 
         return orders;
     }
