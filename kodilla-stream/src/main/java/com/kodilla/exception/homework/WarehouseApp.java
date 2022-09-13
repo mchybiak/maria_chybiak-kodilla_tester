@@ -16,17 +16,15 @@ public class WarehouseApp {
         warehouse.addOrder(new Order("Order67"));
         warehouse.addOrder(new Order("Order101"));
 
-
-
         try {
-            Order isOrderExist = warehouse.getOrder("Order3");
-            System.out.println("Order status " + isOrderExist);
+            Order isOrderExist = warehouse.getOrder("Order75"); // instrukcja powodująca rzucenie wyjątku
+            System.out.println("Order: " + isOrderExist);
 
         } catch (
-                OrderDoesntExistException e) {
+                OrderDoesntExistException e) { // klasa wyjątku, na którą kod powinien reagować
             System.out.println("Sorry, this order doesn't exist in out system.");
 
-        } finally {
+        } finally { // linia 30 wykona się bez względu na to czy wyjątek wystąpi
             System.out.println("Thank you for using our system");
         }
     }

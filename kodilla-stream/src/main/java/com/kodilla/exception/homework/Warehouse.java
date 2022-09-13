@@ -6,9 +6,7 @@
 package com.kodilla.exception.homework;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Warehouse {
 
@@ -18,11 +16,9 @@ public class Warehouse {
         orders.add(order);
     }
 
-
-
     public Order getOrder(String number) throws OrderDoesntExistException{
-        orders.stream().filter(order -> order.getNumber.equals(number))
-                .forEach(un -> System.out.println("Your order is " + number));
+        orders.stream().filter(order -> order.getNumber().equals(number))
+                .forEach(n -> System.out.println("Your order is " + number));
         for (Order order : orders){
             if (order.getNumber().equals(number)){
                 return order;
