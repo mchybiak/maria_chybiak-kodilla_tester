@@ -2,8 +2,6 @@
 
 package com.kodilla.exception.homework;
 
-import java.util.Objects;
-
 public class Order {
 
     private String number;

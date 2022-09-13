@@ -24,6 +24,6 @@ public class Warehouse {
                 return order;
             }
         }
-        throw new OrderDoesntExistException();
+        throw new OrderDoesntExistException(); // polecenie throw jako arg przyjmuje obiekt wyjątku, który ma zostać rzucony
     }
 }
