@@ -6,6 +6,7 @@ public class Application {
         Calculator calculator = new Calculator();
         int a = 5;
         int b = 8;
+        double c = 3;
 
         int sumResult = calculator.sum(a, b);
         boolean correctSum = ResultChecker.assertEquals(13, sumResult);
@@ -24,8 +25,8 @@ public class Application {
             System.out.println("Metoda sub nie działa poprawnie dla liczb " + a + " i " + b);
         }
 
-        int powerAResult = calculator.powerA(a);
-        boolean correctSquare = ResultChecker.assertEquals(32, powerAResult);
+        double squareResult= calculator.square(a, c);
+        boolean correctSquare = ResultChecker.assertEquals(25, (int) squareResult);
         if(correctSquare) {
             System.out.println("Metoda square działa poprawnie dla liczby " + a);
         }
