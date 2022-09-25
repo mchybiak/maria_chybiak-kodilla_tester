@@ -7,7 +7,7 @@ import java.util.Set;
 
 class GamblingMachine {
 
-    public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException {
+    public int howManyWins(Set<Integer> userNumbers) throws InvalidNumbersException { //ilość wygranych -> wyjątek
         validateNumbers(userNumbers);
         Set<Integer> computerNumbers = generateComputerNumbers();
         int count = 0;
@@ -25,7 +25,7 @@ class GamblingMachine {
         }
     }
 
-    private boolean isAnyNumberOutOfDeclaredScope(Set<Integer> numbers) {
+    private boolean isAnyNumberOutOfDeclaredScope(Set<Integer> numbers) { //liczba spoza zakresu 1-49
         return numbers.stream()
                 .anyMatch(number -> number < 1 || number > 49);
     }
