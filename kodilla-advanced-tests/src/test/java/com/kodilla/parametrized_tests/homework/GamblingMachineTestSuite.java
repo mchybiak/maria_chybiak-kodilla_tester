@@ -11,30 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class GamblingMachineTestSuite {
     GamblingMachine gamblingMachine = new GamblingMachine();
 
-    @ParameterizedTest
 
-    public void throwExceptionIfNumberIsNotCorrect(String numbers){ //wyjątek gdy liczba jest nieprawidłowa
-        String[] n = numbers.split(" ");
 
-        Set<String> numbersInSet = new HashSet<>();
-        for (String number: n){
-            numbersInSet.add(number);
-        }
 
-        Set<Integer> testValues = new HashSet<>();
-        numbersInSet.stream()
-                .mapToInt(a -> Integer.parseInt(a))
-                .forEach(b -> testValues.add(b));
-        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(testValues));
     }
-
-    @ParameterizedTest
-
-    public void  noExceptionIfNumberIsCorrect(String numbers) {
-        String[] n = numbers.split(" ");
-
-        Set<String> numbersInSet = new HashSet<>();
-        for (String number : n) {
-            numbersInSet.add(number);
-        }
-    }}

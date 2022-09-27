@@ -41,7 +41,10 @@ class GamblingMachine {
             numbers.add(generator.nextInt(49) + 1);
         }
         return numbers;
+
+
     }
+
 
 
 }
