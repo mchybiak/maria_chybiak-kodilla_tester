@@ -30,5 +30,4 @@ public class Student {
         return teacher;
     }
 
-
 }

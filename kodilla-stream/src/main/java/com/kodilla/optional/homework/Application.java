@@ -28,10 +28,18 @@ public class Application {
         students.add(new Student("Wiktor Niebieski", annaCzerwona));
 
         for (Student student : students) {
-            Optional<Teacher> optionalName = Optional.ofNullable(student.getTeacher());
-            String name = optionalName.orElse(new Teacher("<undefined>")).getName();
-            System.out.println("Uczeń: " + student.getName() + " Nauczyciel: " + name);
-
+            String name = getTeacherName(student);
+            System.out.println("uczeń: " + student.getName() + ", " + "nauczyciel: " + name);
         }
     }
+
+    public static String getTeacherName(Student student) {
+        Optional<Teacher> optionalTeacher = Optional.ofNullable(student.getTeacher());
+        String name = optionalTeacher.orElse(new Teacher("<undefined>")).getName();
+        return name;
+    }
 }
+
+
+
+
