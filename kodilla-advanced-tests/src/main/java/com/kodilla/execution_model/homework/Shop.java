@@ -50,7 +50,7 @@ public class Shop {
                 .collect(Collectors.toList());
     }
 
-    public void clear() { // usunięcie wszystkich zamówień
-        this.orders.clear();
+    public void clearOrderList () { // usunięcie wszystkich zamówień
+        orders.clear();
     }
 }

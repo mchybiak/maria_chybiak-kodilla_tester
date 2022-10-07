@@ -12,6 +12,15 @@ public class Order {
     private LocalDate dateOfOrder;
     private String login;
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "orderValue=" + orderValue +
+                ", dateOfOrder=" + dateOfOrder +
+                ", login='" + login + '\'' +
+                '}';
+    }
+
     public Order(double orderValue, LocalDate dateOfOrder, String login) {
         this.orderValue = orderValue;
         this.dateOfOrder = dateOfOrder;
