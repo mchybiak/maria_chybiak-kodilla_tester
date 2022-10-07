@@ -12,6 +12,7 @@
 package com.kodilla.execution_model.homework;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -35,7 +36,7 @@ public class Shop {
                 .sum();
     }
 
-    public List<Order> getOrdersFromDatesRange (Instant firstDate, Instant lastDate){ // //zwrócenie listy zamówień z zakresu dwóch dat,
+    public List<Order> getOrdersFromDatesRange (LocalDate firstDate, LocalDate lastDate){ // //zwrócenie listy zamówień z zakresu dwóch dat,
         return orders.stream()
                 .filter(date -> date.getDateOfOrder().isAfter(firstDate))
                 .filter(date -> date.getDateOfOrder().isBefore(lastDate))

@@ -4,16 +4,15 @@
 
 package com.kodilla.execution_model.homework;
 
-import java.time.Instant;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Order {
 
     private double orderValue;
-    private Instant dateOfOrder;
+    private LocalDate dateOfOrder;
     private String login;
 
-    public Order(double orderValue, Instant dateOfOrder, String login) {
+    public Order(double orderValue, LocalDate dateOfOrder, String login) {
         this.orderValue = orderValue;
         this.dateOfOrder = dateOfOrder;
         this.login = login;
@@ -24,7 +23,7 @@ public class Order {
         return orderValue;
     }
 
-    public Instant getDateOfOrder() {
+    public LocalDate getDateOfOrder() {
         return dateOfOrder;
     }
 
