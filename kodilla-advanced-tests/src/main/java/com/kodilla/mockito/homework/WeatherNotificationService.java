@@ -29,7 +29,6 @@ public class WeatherNotificationService {
         this.subscribers.remove(localization);
     }
 
-
     //Możliwość wysyłki powiadomienia do wszystkich.
     public void sendNotification(Notification notification){
         for (Map.Entry<Localization, Set<User>> entry: this.subscribers.entrySet()){

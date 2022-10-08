@@ -7,6 +7,7 @@ import java.util.Set;
 
 public class NotificationService {
 
+
     private Set<Client> clients = new HashSet<>();
 
     public void addSubscriber(Client client) {

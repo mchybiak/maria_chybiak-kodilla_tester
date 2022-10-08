@@ -1,10 +1,8 @@
 package com.kodilla.mockito.homework;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class WeatherNotificationServiceTestSuite {
 
@@ -74,12 +72,11 @@ class WeatherNotificationServiceTestSuite {
 
     @Test // po usunięciu z subskrybcji danej lokalizacji, subskrybent nie otrzymuje powiadomienia -> DO POPRAWY
     public void localizationCanBeDeleted(){
-        notificationService.subscribe(user1, localization1);
-        notificationService.subscribe(user1, localization2);
-        notificationService.removeLocalization(localization2);
-        notificationService.notificationForLocalization(localization1, notification);
-        notificationService.notificationForLocalization(localization2, notification);
-        Mockito.verify(user1).receiveNotification(notification);
-        Mockito.verify(user1, Mockito.never()).receiveNotification(notification);
+        notificationService.subscribe(user1, localization1); // User subskrybuje lok1
+        notificationService.notificationForLocalization(localization1, notification); // System wysyła powiadomienie dot. lok1
+        Mockito.verify(user1).receiveNotification(notification); // Mockito sprawdza czy User dostał powiadomienie
+        notificationService.removeLocalization(localization1); // User usuwa subskrybcję lok1
+        notificationService.notificationForLocalization(localization1, notification); // System wysyła powiadomienie dot. lok1
+        Mockito.verify(user1, Mockito.never()).receiveNotification(notification);  // Mockito sprawdza czy User nie dostał powiadomienia
     }
 }
