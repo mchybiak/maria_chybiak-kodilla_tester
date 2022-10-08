@@ -1,9 +1,3 @@
-// Serwis umożliwia wysyłanie powiadomień na dwa sposoby:
-//
-//do wszystkich osób – informacje np. o zmieniającym się regulaminie,
-//do osób obserwujących daną lokalizację – powiadomienie np. o zagrożeniu gradem.
-//Warunki, jakie muszą zostać spełnione:
-
 package com.kodilla.mockito.homework;
 
 import java.util.HashMap;

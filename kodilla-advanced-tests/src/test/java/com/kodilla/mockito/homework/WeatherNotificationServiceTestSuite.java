@@ -77,6 +77,6 @@ class WeatherNotificationServiceTestSuite {
         Mockito.verify(user1).receiveNotification(notification); // Mockito sprawdza czy User dostał powiadomienie
         notificationService.removeLocalization(localization1); // User usuwa subskrybcję lok1
         notificationService.notificationForLocalization(localization1, notification); // System wysyła powiadomienie dot. lok1
-        Mockito.verify(user1, Mockito.never()).receiveNotification(notification);  // Mockito sprawdza czy User nie dostał powiadomienia
+        Mockito.verify(user1).receiveNotification(notification);  // Mockito sprawdza czy User nie dostał powiadomienia
     }
 }
