@@ -70,7 +70,8 @@ class WeatherNotificationServiceTestSuite {
         Mockito.verify(user2, Mockito.never()).receiveNotification(notification);
     }
 
-    @Test // po usunięciu z subskrybcji danej lokalizacji, subskrybent nie otrzymuje powiadomienia -> DO POPRAWY
+    @Test // po usunięciu z subskrybcji danej lokalizacji, subskrybent nie otrzymuje powiadomienia -> OK, ALE DLACZEGO W OSTATNIEJ LINIJCE
+    // POWINNO BYĆ VERIFY.... A NIE MOCKITO.NEVER??
     public void localizationCanBeDeleted(){
         notificationService.subscribe(user1, localization1); // User subskrybuje lok1
         notificationService.notificationForLocalization(localization1, notification); // System wysyła powiadomienie dot. lok1

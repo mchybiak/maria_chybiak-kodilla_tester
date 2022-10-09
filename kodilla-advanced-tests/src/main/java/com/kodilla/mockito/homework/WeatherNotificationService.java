@@ -9,8 +9,6 @@ public class WeatherNotificationService {
 
     public Map<Localization, Set<User>> subscribers = new HashMap<>();
 
-
-
     // getOrDefault -> Returns the value to which the specified key is mapped, or defaultValue if this map contains no mapping for the key.
     // Osoba zainteresowana może zostać zapisana do danej lokalizacji i zacznie otrzymywać powiadomienia.
     public void notificationForLocalization(Localization localization, Notification notification){
