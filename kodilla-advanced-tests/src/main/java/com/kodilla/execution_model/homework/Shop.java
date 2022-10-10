@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
 
 public class Shop {
 
-    Set<Order> orders = new HashSet<>();
+    public static List<Order> orders = new ArrayList<>();
     public void add (Order order){
         orders.add(order);
     }
