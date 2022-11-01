@@ -39,7 +39,6 @@ class CarFactoryTestSuite {
         assertTrue(car.hasHeadlightsTurnedOn());
     }
 
-
     @Test
     void getCarSpringAndAutumnAtDay(){
         LocalDateTime now = LocalDateTime.of(2022,9,5,11,00);

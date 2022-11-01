@@ -9,6 +9,7 @@ public class Sedan implements Car{
         return "Sedan";
     }
 
+
     @Override
     public boolean hasHeadlightsTurnedOn() {
         LocalTime time = LocalTime.now();

@@ -8,7 +8,6 @@ public class Cabrio implements Car{
     public String getCarType() {
         return "Cabrio";
     }
-
     @Override
     public boolean hasHeadlightsTurnedOn() {
         LocalTime time = LocalTime.now();
@@ -18,6 +17,4 @@ public class Cabrio implements Car{
             return true;
         }
     }
-
-
 }
