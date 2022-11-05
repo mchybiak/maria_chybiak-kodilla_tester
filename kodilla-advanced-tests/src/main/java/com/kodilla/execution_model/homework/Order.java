@@ -1,7 +1,6 @@
 // klasę Order, która będzie przechowywać dane zamówienia:
 // wartość zamówienia, datę oraz login osoby dokonującej zamówienia
 
-
 package com.kodilla.execution_model.homework;
 
 import java.time.LocalDate;

@@ -10,15 +10,9 @@
 
 
 package com.kodilla.execution_model.homework;
-
-import com.sun.org.apache.xpath.internal.operations.Or;
-
-import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Shop {
@@ -28,9 +22,9 @@ public class Shop {
         orders.add(order);
     }
 
-   // public void addOrder(Order order) { // dodanie nowego zamówienia
-     //   this.addOrder(order);
-    // }
+   public void addOrder(Order order) { // dodanie nowego zamówienia
+     this.addOrder(order);
+    }
 
     public int getSize() { // zwrócenie liczby zamówień
         return this.orders.size();

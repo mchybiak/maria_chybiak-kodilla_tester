@@ -1,6 +1,5 @@
 package com.kodilla.execution_model.homework;
 
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
