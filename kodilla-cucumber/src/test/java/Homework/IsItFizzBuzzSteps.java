@@ -6,7 +6,6 @@ import org.junit.Assert;
 public class IsItFizzBuzzSteps implements En {
     private Integer number;
     private String result;
-
     public IsItFizzBuzzSteps() {
         Given("The test number is {int}", (Integer int1) -> {
             this.number = int1;

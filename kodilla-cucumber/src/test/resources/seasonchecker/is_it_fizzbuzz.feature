@@ -4,6 +4,7 @@ Feature: The Fizz Buzz game
     When I check for FizzBuzz
     Then I receive <result>
     Examples:
+
       | number | result |
       | 1     | "None" |
       | 2     | "None" |
