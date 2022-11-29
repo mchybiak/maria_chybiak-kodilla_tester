@@ -80,5 +80,6 @@ public class ShopTestSuite {
         shop.addOrder(d);
         shop.addOrder(e);
         shop.addOrder(f);
+
     }
 }

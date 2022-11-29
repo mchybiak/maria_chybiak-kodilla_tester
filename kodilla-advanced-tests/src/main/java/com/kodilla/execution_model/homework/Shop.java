@@ -73,6 +73,5 @@ public class Shop {
                 .sum();
 
         return sum;
-
     }
 }
