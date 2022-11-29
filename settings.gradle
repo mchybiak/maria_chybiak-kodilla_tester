@@ -12,4 +12,6 @@ include 'kodilla-rest-api'
 include 'kodilla-rest-api'
 include 'kodilla-rest-api'
 include 'kodilla-cucumber'
+include 'kodilla-selenium'
+include 'kodilla-code-coverage'
 
