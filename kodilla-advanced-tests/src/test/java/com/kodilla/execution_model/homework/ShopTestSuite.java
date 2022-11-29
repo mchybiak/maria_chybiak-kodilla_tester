@@ -1,86 +1,84 @@
 package com.kodilla.execution_model.homework;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class ShopTestSuite {
 
-class ShopTestSuite {
+    private static Shop shop = new Shop();
 
-    Shop shop = new Shop();
+    private static Order a = new Order(5, LocalDate.of(2022, 11, 29), "login1");
+    private static Order b = new Order(10, LocalDate.of(2022, 11, 25), "login2");
+    private static Order c = new Order(15, LocalDate.of(2022, 8, 20), "login1");
+    private static Order d = new Order(20, LocalDate.of(2020, 8, 1), "login3");
+    private static Order e = new Order(25, LocalDate.of(2019, 12, 3), "login1");
+    private static Order f = new Order(30, LocalDate.of(2010, 1, 10), "login4");
 
-    Order order1 = new Order(99.99, LocalDate.of(2022, 10, 7), "akowalska");
-    Order order2 = new Order(199.99, LocalDate.of(2022, 10, 1), "mchybiak");
-    Order order3 = new Order(9.99, LocalDate.of(2022, 5, 30), "knowak");
-    Order order4 = new Order(12.33, LocalDate.of(2021, 1, 12), "akowalska");
-    Order order5 = new Order(0.01, LocalDate.of(2025, 3, 1), "zosia13");
-    Order order6 = new Order(0.99, LocalDate.of(1885, 8, 10), "abc123");
-
-    @BeforeEach
-    void initializeOrder() {
-        shop.add(order1);
-        shop.add(order2);
-        shop.add(order3);
-        shop.add(order4);
-        shop.add(order5);
-        shop.add(order6);
+    @Test
+    public void shouldAddOrderToShop() {
+        //when
+        int numberOfItems = shop.getSize();
+        //then
+        assertEquals(6, numberOfItems);
     }
 
-
-    @Test //1. Dodanie nowego zamówienia.
-    void shouldAddOrder() {
-        int numberOfOrders = shop.getSize();
-        assertEquals(6, numberOfOrders);
+    @Test
+    public void shouldShowOrdersInADateRange() {
+        //given
+        List<Order> expectedList = new ArrayList<>();
+        expectedList.add(a);
+        expectedList.add(b);
+        expectedList.add(c);
+        LocalDate startDate = LocalDate.of(2022,1,1);
+        LocalDate lastDate = LocalDate.of(2022,12,31);
+        //when
+        List<Order> ordersFromTwoYears = shop.getOrdersFromDefinedDates(startDate, lastDate);
+        //then
+        assertEquals(expectedList, ordersFromTwoYears);
     }
 
-    @Test //2. Sprawdzenie czy rozmiar zmienia się po dodaniu zamówienia.
-    void afterAddOrderSizeOfListShouldBeChanged() {
-        assertEquals(6, shop.getSize());
+    @Test
+    public void shouldShowOrderWithTheHighestPrice() {
+        //when
+        int maxNumber = shop.getOrderWithHighestPrice();
+        //then
+        assertEquals(30, maxNumber);
     }
 
-    @Test //3. Sprawdzenie czy zmienia się wartość wszystkich zamówień po dodaniu nowego zamówienia.
-    void afterAddOrderSumOfValueShouldBeChanged(){
-        assertEquals(323.3, shop.getSumOfAllValues());
+    @Test
+    public void shouldShowOrderWithTheLowestPrice() {
+        //when
+        int minNumber = shop.getOrderWithTheLowestPrice();
+        //then
+        assertEquals(5, minNumber);
     }
 
-    @Test //4. Sprawdzenie czy rozmiar listy pozostaje bez zmian po dodaniu dubla.
-    void sizeOfListShouldNotBeChangedAfterAddDuplicateOrder(){
-        shop.add(order1);
-        assertEquals(6, shop.getSize());
+    @Test
+    public void shouldCountNumberOfOrders() {
+        //when
+        int numberOfItems = shop.getSize();
+        //then
+        assertEquals(6, numberOfItems);
     }
 
-    @Test //5. Sprawdzenie czy suma wartości wszystkich zamówień nie zmienia się po dodaniu dubla.
-    void sumOfValueShouldNotBeChangedAfterAddDuplicateOrder(){
-        shop.add(order1);
-        assertEquals(323.3, shop.getSumOfAllValues());
-
+    @Test
+    public void shouldSumAllOrderPrices() {
+        //when
+        int sumOfPrices = shop.sumAllOrderPrices();
+        //then
+        assertEquals(105, sumOfPrices);
     }
 
-    @Test // 6. Sprawdzenie czy zwróci pustą listę po podaniu zakresu dat w których nie ma zamówień.
-    void shouldReturnEmptyListForDatesOutOfRange(){
-        assertEquals(new ArrayList<Order>(), shop.getOrdersFromDatesRange(LocalDate.of(2022,10,30), LocalDate.of(2022,12,31)));
-    }
-
-    @Test // 7. Sprawdzenie czy zwróci 4 elementy po podaniu odpowiedniego zakresu.
-    void shouldReturn4ElementsForRange(){ // do poprawy
-        List<Order> expectedOrders = new ArrayList<>();
-        expectedOrders.add(order1);
-        expectedOrders.add(order2);
-        expectedOrders.add(order3);
-        expectedOrders.add(order4);
-        assertEquals(expectedOrders, shop.getOrdersFromDatesRange(LocalDate.of(2021,1,1), LocalDate.of(2022,12,31)));
-    }
-
-    @Test // 8. Sprawdzenie czy zwróci 4 zamówienia po podaniu odpowiedniego zakresu
-    public void shouldReturnEmptyListForValuesOutOfRange(){ // do poprawy
-        List<Order> expectedOrdersWithValueFromRange = new ArrayList<>();
-        expectedOrdersWithValueFromRange.add(order1);
-        expectedOrdersWithValueFromRange.add(order2);
-        expectedOrdersWithValueFromRange.add(order3);
-        expectedOrdersWithValueFromRange.add(order4);
-        assertEquals(expectedOrdersWithValueFromRange, shop.getOrdersByOrderValue(8.0, 200.0));
+    @BeforeAll
+    public static void initializeOrders() {
+        shop.addOrder(a);
+        shop.addOrder(b);
+        shop.addOrder(c);
+        shop.addOrder(d);
+        shop.addOrder(e);
+        shop.addOrder(f);
     }
 }

@@ -7,9 +7,9 @@
 // zwrócenie listy zamówień z zakresu dwóch dat,
 // pobranie zamówień na podstawie przekazanego zakresu (najmniejsza i największa wartość zamówienia),
 
-
-
 package com.kodilla.execution_model.homework;
+
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,41 +17,73 @@ import java.util.stream.Collectors;
 
 public class Shop {
 
-    public static List<Order> orders = new ArrayList<>();
-    public void add (Order order){
-        orders.add(order);
+    public static List<Order> myOrders = new ArrayList<>();
+
+    public static List<Order> getMyList() {
+        return myOrders;
     }
 
-   public void addOrder(Order order) { // dodanie nowego zamówienia
-     this.addOrder(order);
+    public void addOrder(Order order) {
+        this.myOrders.add(order);
     }
 
-    public int getSize() { // zwrócenie liczby zamówień
-        return this.orders.size();
+    public List<Order> getOrdersFromDefinedDates(LocalDate startDate, LocalDate lastDate) {
+
+        List<Order> newList = Shop.getMyList()
+                .stream()
+                .filter(u -> u.getDate().isAfter(startDate))
+                .filter(u -> u.getDate().isBefore(lastDate))
+                .collect(Collectors.toList());
+
+        return newList;
     }
 
-    public double getSumOfAllValues() { // zsumowanie wartości wszystkich zamówień
-        return orders.stream()
-                .map(value -> value.getOrderValue())
-                .mapToDouble(value -> value)
+    public int getSize() {
+        return this.myOrders.size();
+    }
+
+    public int getOrderWithHighestPrice() {
+
+        int max = Shop.getMyList()
+                .stream()
+                .map(u -> u.getPrice())
+                .mapToInt(n -> n)
+                .max()
+                .getAsInt();
+
+        return max;
+    }
+    public int getOrderWithTheLowestPrice() {
+
+        int min = Shop.getMyList()
+                .stream()
+                .map(u -> u.getPrice())
+                .mapToInt(n -> n)
+                .min()
+                .getAsInt();
+
+        return min;
+    }
+    public int sumAllOrderPrices() {
+
+        int sum = Shop.getMyList()
+                .stream()
+                .map(u -> u.getPrice())
+                .mapToInt(n -> n)
                 .sum();
-    }
 
-    public List<Order> getOrdersFromDatesRange (LocalDate firstDate, LocalDate lastDate){ // //zwrócenie listy zamówień z zakresu dwóch dat,
-        return orders.stream()
-                .filter(date -> date.getDateOfOrder().isAfter(firstDate))
-                .filter(date -> date.getDateOfOrder().isBefore(lastDate))
+        return sum;
+
+    }
+    public List<Order> showOrdersWithDefinedPrices(int from, int to) {
+
+        List<Order> newList = Shop.getMyList()
+                .stream()
+                .filter(u -> u.getPrice() > from)
+                .filter(u -> u.getPrice() < to)
                 .collect(Collectors.toList());
-    }
+        System.out.println(newList);
 
-    public List<Order> getOrdersByOrderValue (double theLowestValue, double theHighestValue){ // pobranie zamówień na podstawie przekazanego zakresu (najmniejsza i największa wartość zamówienia)
-        return orders.stream()
-                .filter(value -> value.getOrderValue() >= theLowestValue)
-                .filter(value -> value.getOrderValue() <= theHighestValue)
-                .collect(Collectors.toList());
-    }
-
-    public void clearOrderList () { // usunięcie wszystkich zamówień
-        orders.clear();
+        return newList;
     }
 }

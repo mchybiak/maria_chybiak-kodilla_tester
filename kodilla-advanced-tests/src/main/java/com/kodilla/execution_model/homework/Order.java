@@ -4,37 +4,25 @@
 package com.kodilla.execution_model.homework;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 public class Order {
 
-    private double orderValue;
-    private LocalDate dateOfOrder;
-    private String login;
+    int price;
+    LocalDate date;
+    String login;
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderValue=" + orderValue +
-                ", dateOfOrder=" + dateOfOrder +
-                ", login='" + login + '\'' +
-                '}';
-    }
-
-
-    public Order(double orderValue, LocalDate dateOfOrder, String login) {
-        this.orderValue = orderValue;
-        this.dateOfOrder = dateOfOrder;
+    public Order(int price, LocalDate date, String login) {
+        this.price = price;
+        this.date = date;
         this.login = login;
     }
 
-
-    public double getOrderValue() {
-        return orderValue;
+    public int getPrice() {
+        return price;
     }
 
-    public LocalDate getDateOfOrder() {
-        return dateOfOrder;
+    public LocalDate getDate() {
+        return date;
     }
 
     public String getLogin() {
@@ -42,15 +30,11 @@ public class Order {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Order)) return false;
-        Order order = (Order) o;
-        return Double.compare(order.getOrderValue(), getOrderValue()) == 0 && Objects.equals(getDateOfOrder(), order.getDateOfOrder()) && Objects.equals(getLogin(), order.getLogin());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getOrderValue(), getDateOfOrder(), getLogin());
+    public String toString() {
+        return "Order{" +
+                "price=" + price +
+                ", date=" + date +
+                ", login='" + login + '\'' +
+                '}';
     }
 }
