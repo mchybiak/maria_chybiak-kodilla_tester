@@ -35,7 +35,7 @@ public class ShopTestSuite {
         LocalDate startDate = LocalDate.of(2022,1,1);
         LocalDate lastDate = LocalDate.of(2022,12,31);
         //when
-        List<Order> ordersFromTwoYears = shop.getOrdersFromDefinedDates(startDate, lastDate);
+        List<Order> ordersFromTwoYears = shop.getOrdersInADateRange(startDate, lastDate);
         //then
         assertEquals(expectedList, ordersFromTwoYears);
     }

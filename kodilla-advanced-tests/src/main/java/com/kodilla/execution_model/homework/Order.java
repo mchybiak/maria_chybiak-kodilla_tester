@@ -24,11 +24,9 @@ public class Order {
     public LocalDate getDate() {
         return date;
     }
-
     public String getLogin() {
         return login;
     }
-
     @Override
     public String toString() {
         return "Order{" +

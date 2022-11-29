@@ -27,7 +27,7 @@ public class Shop {
         this.myOrders.add(order);
     }
 
-    public List<Order> getOrdersFromDefinedDates(LocalDate startDate, LocalDate lastDate) {
+    public List<Order> getOrdersInADateRange (LocalDate startDate, LocalDate lastDate) {
 
         List<Order> newList = Shop.getMyList()
                 .stream()
@@ -74,16 +74,5 @@ public class Shop {
 
         return sum;
 
-    }
-    public List<Order> showOrdersWithDefinedPrices(int from, int to) {
-
-        List<Order> newList = Shop.getMyList()
-                .stream()
-                .filter(u -> u.getPrice() > from)
-                .filter(u -> u.getPrice() < to)
-                .collect(Collectors.toList());
-        System.out.println(newList);
-
-        return newList;
     }
 }
