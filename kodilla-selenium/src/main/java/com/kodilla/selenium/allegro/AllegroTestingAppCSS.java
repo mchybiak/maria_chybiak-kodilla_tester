@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class AllegroTestingApp {
+public class AllegroTestingAppCSS {
 
     public static void main(String[] args) {
 
