@@ -16,5 +16,6 @@ public class EBayTestingApp {
 
         WebElement clickField = driver.findElement(By.id("gh-btn"));
         clickField.click();
+
     }
 }
