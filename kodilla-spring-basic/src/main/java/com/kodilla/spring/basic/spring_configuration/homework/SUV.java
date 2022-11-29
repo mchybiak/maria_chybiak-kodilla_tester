@@ -9,7 +9,6 @@ public class SUV implements Car{
     }
 
 
-
     @Override
     public boolean hasHeadlightsTurnedOn() {
         LocalTime time = LocalTime.now();
