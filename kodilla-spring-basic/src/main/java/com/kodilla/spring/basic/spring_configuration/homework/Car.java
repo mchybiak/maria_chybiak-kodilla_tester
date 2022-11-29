@@ -5,6 +5,7 @@ package com.kodilla.spring.basic.spring_configuration.homework;
 // Dodaj drugą metodę, getCarType(), zwracającą Stringa – typ samochodu.
 
 public interface Car {
+
     String getCarType();
     boolean hasHeadlightsTurnedOn();
 }
