@@ -15,4 +15,5 @@ include 'kodilla-cucumber'
 include 'kodilla-selenium'
 include 'kodilla-code-coverage'
 include 'kodilla-google-selenium'
+include 'kodilla-google-selenium'
 
