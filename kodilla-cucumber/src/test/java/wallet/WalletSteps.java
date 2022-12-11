@@ -26,27 +26,59 @@ public class WalletSteps implements En {
         });
 
 
-        Given("I have deposited $200 in my wallet", () -> {
-            wallet.deposit(200);
-            Assert.assertEquals("Incorrect wallet balance", 200, wallet.getBalance());
+
+
+        Given("I have deposited $100 in my wallet", () -> {
+            wallet.deposit(100);
+            Assert.assertEquals("Incorrect wallet balance", 100, wallet.getBalance());
         });
-        When("I request $300", () -> {
+        When("I request $120", () -> {
             Cashier cashier = new Cashier(cashSlot);
-            cashier.withdraw(wallet, 300);
+            cashier.withdraw(wallet, 120);
         });
-        Then("Withdrawal isn't possible - not enough money in the wallet", () -> {
+        Then("I should get {int}", (Integer int1) -> {
             Assert.assertEquals(0, cashSlot.getContents());
         });
 
 
 
-        When("I request $0", () -> {
+        When("I don't have withdrawal", () -> {
             Cashier cashier = new Cashier(cashSlot);
             cashier.withdraw(wallet, 0);
         });
-        Then("Withdrawal shouldn't be made", () -> {
+        Then("$0 should be dispensed", () -> {
             Assert.assertEquals(0, cashSlot.getContents());
         });
 
-}
+
+
+        Given("there is $100 in my wallet", () -> {
+            wallet.deposit(100);
+            Assert.assertEquals("Incorrect wallet balance", 100, wallet.getBalance());
+        });
+        When("I withdraw $200", () -> {
+            Cashier cashier = new Cashier(cashSlot);
+            cashier.withdraw(wallet, 200);
+        });
+        Then("nothing should be dispensed", () -> {
+            Assert.assertEquals(0, cashSlot.getContents());
+        });
+        Then("I should be told that I don't have enough money in my wallet", () -> {
+            Assert.assertEquals("There is not enough money on your account", "There is not enough money on your account");
+        });
+
+
+
+        Given("There is $100 in my wallet", () -> {
+            wallet.deposit(100);
+            Assert.assertEquals("Incorrect wallet balance", 100, wallet.getBalance());
+
+        });
+        When("I check the balance of my wallet", () -> {
+            System.out.println(wallet.getBalance());
+        });
+        Then("I should see that the balance is $100", () -> {
+            Assert.assertEquals(100, wallet.getBalance());
+        });
+    }
 }
