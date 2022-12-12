@@ -1,3 +1,4 @@
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,9 +13,9 @@ public class TestGoogle {
 
     @Before
     public void testSetup() {
-        System.setProperty("webdriver.chrome.driver", "chromedriver");
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.navigate().to("http://wwww.google.com");
+        driver.navigate().to("http://wwww.google.pl");
     }
 
     @After

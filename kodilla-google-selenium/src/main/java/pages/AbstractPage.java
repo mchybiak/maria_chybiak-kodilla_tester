@@ -8,8 +8,4 @@ public abstract class AbstractPage {
     public AbstractPage(WebDriver driver) {
         this.driver = driver;
     }
-
-    public AbstractPage() {
-
-    }
 }
