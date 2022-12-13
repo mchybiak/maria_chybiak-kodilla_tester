@@ -5,5 +5,4 @@ public class InvalidNumbersException extends Exception {
 
         super("Wrong numbers provided");
     }
-
 }

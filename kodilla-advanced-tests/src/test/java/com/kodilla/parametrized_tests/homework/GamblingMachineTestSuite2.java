@@ -1,80 +1,49 @@
 package com.kodilla.parametrized_tests.homework;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import java.util.HashSet;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class GamblingMachineTestSuite2 {
 
-class GamblingMachineTestSuite2 {
-GamblingMachine gamblingMachine = new GamblingMachine();
-
-@ParameterizedTest
-@CsvFileSource(resources = "/gamblingMachineCorrectNumbers.csv", numLinesToSkip = 1)
-
-public void howManyWins_ReturnNumberOfWins (int n1, int n2, int n3, int n4, int n5, int n6) throws InvalidNumbersException{
-      Set<Integer> numbers = new HashSet<>();
-      numbers.add(n1);
-      numbers.add(n2);
-      numbers.add(n3);
-      numbers.add(n4);
-      numbers.add(n5);
-      numbers.add(n6);
-
-       assertEquals(true,GamblingMachine.howManyWins(numbers) >= 0 && GamblingMachine.howManyWins(numbers) <=6);
-   }
-
+    private GamblingMachine2 gamblingMachine = new GamblingMachine2();
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/gamblingMachineNegativeNumbersAndNull.csv", numLinesToSkip = 1)
-    public void howManyWins_NegativeNumbersAndNull (int n1, int n2, int n3, int n4, int n5, int n6) throws InvalidNumbersException{
-        Set<Integer> numbers = new HashSet<>();
-        numbers.add(n1);
-        numbers.add(n2);
-        numbers.add(n3);
-        numbers.add(n4);
-        numbers.add(n5);
-        numbers.add(n6);
+    @CsvFileSource(resources = "/numbersGamblingMachine.csv", numLinesToSkip = 1)
+    public void shouldCountWins(String input) throws InvalidNumbersException {
 
-        assertEquals(InvalidNumbersException.class,GamblingMachine.howManyWins(numbers));
+        String[] numbers = input.split(";");
+        List<String> numberList = Arrays.asList(numbers);
+        Set<Integer> collect = numberList.stream().map(numberItem -> Integer.parseInt(numberItem)).collect(Collectors.toSet());
+        int wins = gamblingMachine.howManyWins(collect);
+        int result = wins;
+        assertTrue(result >= 0 && result <=6);
+
     }
-
     @ParameterizedTest
-    @CsvFileSource(resources = "/gamblingMachineTooManyNumbers.csv", numLinesToSkip = 1)
-    public void testHowManyWins_TooManyNumbers(int n1, int n2, int n3, int n4, int n5, int n6, int n7, int n8, int n9) {
-        Set<Integer> numbers = new HashSet<>();
-        numbers.add(n1);
-        numbers.add(n2);
-        numbers.add(n3);
-        numbers.add(n4);
-        numbers.add(n5);
-        numbers.add(n6);
-        numbers.add(n7);
-        numbers.add(n8);
-        numbers.add(n9);
-        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
+    @CsvFileSource(resources = "/numbersGamblingMachine2.csv", numLinesToSkip = 1)
+    public void shouldCountWins_withException(String input) {
+
+        String[] numbers = input.split(";");
+        List<String> numberList = Arrays.asList(numbers);
+        Set<Integer> collect = numberList.stream().map(numberItem -> Integer.parseInt(numberItem)).collect(Collectors.toSet());
+        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(collect));
+
     }
-
-    @ParameterizedTest
-    @CsvFileSource(resources = "/gamblingMachineTooHighNumbers.csv", numLinesToSkip = 1)
-    public void testHowManyWins_TooHighNumbers_withException(int n1, int n2, int n3, int n4, int n5, int n6) {
-        Set<Integer> numbers = new HashSet<>();
-        numbers.add(n1);
-        numbers.add(n2);
-        numbers.add(n3);
-        numbers.add(n4);
-        numbers.add(n5);
-        numbers.add(n6);
-        assertThrows(InvalidNumbersException.class, () -> gamblingMachine.howManyWins(numbers));
+    @Test
+    public void test() {
+        String input = "1;2;3;4";
+        String[] strings = input.split(";");
+        List<String> list = Arrays.asList(strings);
+        Set<Integer> collect = list.stream().map(listItem -> Integer.parseInt(listItem))
+                .collect(Collectors.toSet());
     }
 }
-
-
-
-
-// gamblingMachineCorrectNumbers.csv
-// gamblingMachineNegativeNumbersAndNull.csv
-// gamblingMachineTooManyNumbers.csv
-// gamblingMachineTooHighNumbers.csv
