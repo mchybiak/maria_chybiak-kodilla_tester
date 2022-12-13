@@ -26,7 +26,6 @@ public class GamblingMachineTestSuite2 {
         int wins = gamblingMachine.howManyWins(collect);
         int result = wins;
         assertTrue(result >= 0 && result <=6);
-
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/numbersGamblingMachine2.csv", numLinesToSkip = 1)
