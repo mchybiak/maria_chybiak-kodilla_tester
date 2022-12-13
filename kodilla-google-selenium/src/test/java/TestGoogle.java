@@ -2,20 +2,19 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.GoogleSearch;
 
-
 public class TestGoogle {
-
     WebDriver driver;
-
     @Before
     public void testSetup() {
         System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         driver = new ChromeDriver();
-        driver.navigate().to("http://wwww.google.pl");
+        driver.get("https://www.google.com");
+        driver.findElement(By.id("L2AGLb")).click();
     }
 
     @After
